@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 커스텀 스타일 */
+.theme-classic {
+  background-color: #ffffff;
+}
+
+.theme-dark {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+.theme-pastel {
+  background-color: #fce7f3;
+}
+
+/* 필요에 따라 더 많은 테마 추가 */

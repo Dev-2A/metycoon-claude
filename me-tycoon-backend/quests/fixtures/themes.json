@@ -1,0 +1,102 @@
+[
+    {
+      "model": "quests.theme",
+      "pk": 1,
+      "fields": {
+        "code": "default",
+        "name": "클래식",
+        "description": "기본 테마입니다.",
+        "coin_cost": 0
+      }
+    },
+    {
+      "model": "quests.theme",
+      "pk": 2,
+      "fields": {
+        "code": "dark",
+        "name": "다크",
+        "description": "어두운 배경의 테마입니다.",
+        "coin_cost": 200
+      }
+    },
+    {
+      "model": "quests.theme",
+      "pk": 3,
+      "fields": {
+        "code": "pastel",
+        "name": "파스텔",
+        "description": "부드러운 파스텔 색상의 테마입니다.",
+        "coin_cost": 300
+      }
+    },
+    {
+      "model": "quests.theme",
+      "pk": 4,
+      "fields": {
+        "code": "neon",
+        "name": "네온",
+        "description": "화려한 네온 색상의 테마입니다.",
+        "coin_cost": 500
+      }
+    },
+    {
+      "model": "quests.theme",
+      "pk": 5,
+      "fields": {
+        "code": "forest",
+        "name": "숲",
+        "description": "자연 속 숲을 연상케 하는 테마입니다.",
+        "coin_cost": 400
+      }
+    },
+    {
+      "model": "quests.theme",
+      "pk": 6,
+      "fields": {
+        "code": "ocean",
+        "name": "바다",
+        "description": "시원한 바다를 연상케 하는 테마입니다.",
+        "coin_cost": 400
+      }
+    },
+    {
+      "model": "quests.theme",
+      "pk": 7,
+      "fields": {
+        "code": "sunset",
+        "name": "석양",
+        "description": "아름다운 노을을 연상케 하는 테마입니다.",
+        "coin_cost": 400
+      }
+    },
+    {
+      "model": "quests.theme",
+      "pk": 8,
+      "fields": {
+        "code": "matrix",
+        "name": "매트릭스",
+        "description": "영화 매트릭스를 연상케 하는 테마입니다.",
+        "coin_cost": 600
+      }
+    },
+    {
+      "model": "quests.theme",
+      "pk": 9,
+      "fields": {
+        "code": "gold",
+        "name": "골드",
+        "description": "황금빛 화려한 테마입니다.",
+        "coin_cost": 800
+      }
+    },
+    {
+      "model": "quests.theme",
+      "pk": 10,
+      "fields": {
+        "code": "vintage",
+        "name": "빈티지",
+        "description": "클래식한 빈티지 스타일의 테마입니다.",
+        "coin_cost": 350
+      }
+    }
+  ]

@@ -1,0 +1,146 @@
+[
+    {
+      "model": "quests.quest",
+      "pk": 1,
+      "fields": {
+        "title": "오늘의 공부시간 30분 달성하기",
+        "description": "하루에 최소 30분 이상 공부하는 습관을 길러보세요.",
+        "quest_type": "daily",
+        "experience": 20,
+        "coin": 10,
+        "is_active": true
+      }
+    },
+    {
+      "model": "quests.quest",
+      "pk": 2,
+      "fields": {
+        "title": "물 2L 마시기",
+        "description": "건강을 위해 하루에 물 2L를 마셔보세요.",
+        "quest_type": "daily",
+        "experience": 15,
+        "coin": 8,
+        "is_active": true
+      }
+    },
+    {
+      "model": "quests.quest",
+      "pk": 3,
+      "fields": {
+        "title": "아침 식사 하기",
+        "description": "건강한 하루의 시작은 아침 식사부터! 아침을 든든하게 드셨나요?",
+        "quest_type": "daily",
+        "experience": 10,
+        "coin": 5,
+        "is_active": true
+      }
+    },
+    {
+      "model": "quests.quest",
+      "pk": 4,
+      "fields": {
+        "title": "주간 독서 3시간 달성하기",
+        "description": "이번 주에 총 3시간 독서를 완료해보세요.",
+        "quest_type": "weekly",
+        "experience": 50,
+        "coin": 30,
+        "is_active": true
+      }
+    },
+    {
+      "model": "quests.quest",
+      "pk": 5,
+      "fields": {
+        "title": "주간 운동 3회 완료하기",
+        "description": "이번 주에 3회 이상 30분 운동을 완료해보세요.",
+        "quest_type": "weekly",
+        "experience": 60,
+        "coin": 35,
+        "is_active": true
+      }
+    },
+    {
+      "model": "quests.quest",
+      "pk": 6,
+      "fields": {
+        "title": "주간 미디어 제한 시간 지키기",
+        "description": "이번 주에 하루 2시간 이내로 미디어 사용 시간을 지켜보세요.",
+        "quest_type": "weekly",
+        "experience": 45,
+        "coin": 25,
+        "is_active": true
+      }
+    },
+    {
+      "model": "quests.quest",
+      "pk": 7,
+      "fields": {
+        "title": "월간 독서 1권 완독하기",
+        "description": "이번 달에 책 한 권을 완독해보세요.",
+        "quest_type": "monthly",
+        "experience": 100,
+        "coin": 70,
+        "is_active": true
+      }
+    },
+    {
+      "model": "quests.quest",
+      "pk": 8,
+      "fields": {
+        "title": "월간 저축 목표 달성하기",
+        "description": "이번 달 저축 목표액을 달성해보세요.",
+        "quest_type": "monthly",
+        "experience": 120,
+        "coin": 80,
+        "is_active": true
+      }
+    },
+    {
+      "model": "quests.quest",
+      "pk": 9,
+      "fields": {
+        "title": "월간 새로운 취미 도전하기",
+        "description": "이번 달에 새로운 취미를 시작하고 최소 3회 이상 시도해보세요.",
+        "quest_type": "monthly",
+        "experience": 90,
+        "coin": 60,
+        "is_active": true
+      }
+    },
+    {
+      "model": "quests.quest",
+      "pk": 10,
+      "fields": {
+        "title": "봄맞이 대청소 완료하기",
+        "description": "봄을 맞아 집안 대청소를 완료해보세요.",
+        "quest_type": "event",
+        "experience": 150,
+        "coin": 100,
+        "is_active": true
+      }
+    },
+    {
+      "model": "quests.quest",
+      "pk": 11,
+      "fields": {
+        "title": "연말 목표 회고하기",
+        "description": "올해의 목표를 돌아보고 내년 계획을 세워보세요.",
+        "quest_type": "event",
+        "experience": 170,
+        "coin": 120,
+        "is_active": true
+      }
+    },
+    {
+      "model": "quests.quest",
+      "pk": 12,
+      "fields": {
+        "title": "생일 축하 퀘스트",
+        "description": "생일을 축하합니다! 오늘 하루 자신에게 선물을 주세요.",
+        "quest_type": "event",
+        "experience": 130,
+        "coin": 90,
+        "is_active": true
+      }
+    }
+  ]

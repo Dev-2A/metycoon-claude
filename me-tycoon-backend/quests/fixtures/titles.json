@@ -1,0 +1,122 @@
+[
+    {
+      "model": "quests.title",
+      "pk": 1,
+      "fields": {
+        "name": "초보 도전자",
+        "description": "처음으로 퀘스트 시스템에 도전한 사람에게 주는 칭호",
+        "condition_type": "quest_complete_count",
+        "condition_value": 1
+      }
+    },
+    {
+      "model": "quests.title",
+      "pk": 2,
+      "fields": {
+        "name": "열정적인 성취가",
+        "description": "10개의 퀘스트를 달성한 사람에게 주는 칭호",
+        "condition_type": "quest_complete_count",
+        "condition_value": 10
+      }
+    },
+    {
+      "model": "quests.title",
+      "pk": 3,
+      "fields": {
+        "name": "퀘스트 사냥꾼",
+        "description": "30개의 퀘스트를 달성한 사람에게 주는 칭호",
+        "condition_type": "quest_complete_count",
+        "condition_value": 30
+      }
+    },
+    {
+      "model": "quests.title",
+      "pk": 4,
+      "fields": {
+        "name": "퀘스트의 신",
+        "description": "100개의 퀘스트를 달성한 사람에게 주는 칭호",
+        "condition_type": "quest_complete_count",
+        "condition_value": 100
+      }
+    },
+    {
+      "model": "quests.title",
+      "pk": 5,
+      "fields": {
+        "name": "일일 퀘스트 마스터",
+        "description": "20개의 일일 퀘스트를 완료한 사람에게 주는 칭호",
+        "condition_type": "daily_quest_count",
+        "condition_value": 20
+      }
+    },
+    {
+      "model": "quests.title",
+      "pk": 6,
+      "fields": {
+        "name": "주간 퀘스트 마스터",
+        "description": "10개의 주간 퀘스트를 완료한 사람에게 주는 칭호",
+        "condition_type": "weekly_quest_count",
+        "condition_value": 10
+      }
+    },
+    {
+      "model": "quests.title",
+      "pk": 7,
+      "fields": {
+        "name": "연속 달성 전문가",
+        "description": "7일 연속 퀘스트를 달성한 사람에게 주는 칭호",
+        "condition_type": "consecutive_days",
+        "condition_value": 7
+      }
+    },
+    {
+      "model": "quests.title",
+      "pk": 8,
+      "fields": {
+        "name": "레벨 5 달성자",
+        "description": "레벨 5에 도달한 사람에게 주는 칭호",
+        "condition_type": "level_reach",
+        "condition_value": 5
+      }
+    },
+    {
+      "model": "quests.title",
+      "pk": 9,
+      "fields": {
+        "name": "레벨 10 달성자",
+        "description": "레벨 10에 도달한 사람에게 주는 칭호",
+        "condition_type": "level_reach",
+        "condition_value": 10
+      }
+    },
+    {
+      "model": "quests.title",
+      "pk": 10,
+      "fields": {
+        "name": "하루의 지배자",
+        "description": "하루에 5개 이상의 퀘스트를 완료한 사람에게 주는 칭호",
+        "condition_type": "one_day_quest_count",
+        "condition_value": 5
+      }
+    },
+    {
+      "model": "quests.title",
+      "pk": 11,
+      "fields": {
+        "name": "부자",
+        "description": "500 코인을 모은 사람에게 주는 칭호",
+        "condition_type": "coin_collect",
+        "condition_value": 500
+      }
+    },
+    {
+      "model": "quests.title",
+      "pk": 12,
+      "fields": {
+        "name": "보상 수집가",
+        "description": "5개의 보상을 구매한 사람에게 주는 칭호",
+        "condition_type": "reward_buy_count",
+        "condition_value": 5
+      }
+    }
+  ]

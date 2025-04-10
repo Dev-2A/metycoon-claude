@@ -1,0 +1,56 @@
+[
+    {
+      "model": "quests.reward",
+      "pk": 1,
+      "fields": {
+        "name": "영화 티켓",
+        "description": "자신에게 주는 선물! 영화 한 편 관람 티켓입니다.",
+        "cost": 100
+      }
+    },
+    {
+      "model": "quests.reward",
+      "pk": 2,
+      "fields": {
+        "name": "맛있는 디저트",
+        "description": "열심히 일한 당신에게 달콤한 디저트를 선물하세요.",
+        "cost": 50
+      }
+    },
+    {
+      "model": "quests.reward",
+      "pk": 3,
+      "fields": {
+        "name": "30분 휴식 시간",
+        "description": "스마트폰, 컴퓨터 없이 30분간 편안한 휴식을 취하세요.",
+        "cost": 30
+      }
+    },
+    {
+      "model": "quests.reward",
+      "pk": 4,
+      "fields": {
+        "name": "새 책 구매권",
+        "description": "읽고 싶었던 새 책을 한 권 구매하세요.",
+        "cost": 150
+      }
+    },
+    {
+      "model": "quests.reward",
+      "pk": 5,
+      "fields": {
+        "name": "마사지 쿠폰",
+        "description": "피로를 풀어주는 마사지 쿠폰입니다.",
+        "cost": 200
+      }
+    },
+    {
+      "model": "quests.reward",
+      "pk": 6,
+      "fields": {
+        "name": "취미 용품 구매",
+        "description": "좋아하는 취미 생활을 위한 물품을 구매하세요.",
+        "cost": 250
+      }
+    }
+  ]
