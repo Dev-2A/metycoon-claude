@@ -45,7 +45,7 @@ export const purchaseReward = async (rewardId) => {
     }
 };
 
-export const useReward = async (userRewardId) => {
+export const consumeReward = async (userRewardId) => {
     try {
         const response = await fetchWithAuth(`/user-rewards/${userRewardId}`, {
             method: 'DELETE',

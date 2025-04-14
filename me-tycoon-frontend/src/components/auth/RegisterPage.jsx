@@ -84,4 +84,6 @@ const RegisterPage = ({ onSwitchToLogin }) => {
       </div>
     </div>
   );
-}
+};
+
+export default RegisterPage;

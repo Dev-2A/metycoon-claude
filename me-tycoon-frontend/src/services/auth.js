@@ -1,5 +1,7 @@
 import { fetchWithAuth, setAuthToken, clearAuthToken } from './api';
 
+const API_BASE_URL = 'http://localhost:8000/api';
+
 export const login = async (username, password) => {
     try {
         const response = await fetch(`${API_BASE_URL}/token/`, {
@@ -40,7 +42,7 @@ export const register = async (username, password) => {
         if (response.ok) {
             return { success: true, message: '회원가입에 성공했습니다. 로그인해주세요.' };
         } else {
-            const errorData = await reseponse.json();
+            const errorData = await response.json();
             return {
                 success: false,
                 message: errorData.username || errorData.password || '회원가입에 실패했습니다.'

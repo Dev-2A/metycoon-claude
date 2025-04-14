@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
-import { getAllRewards, getUserRewards, purchaseReward, useReward } from '../../services/rewards';
+import { getAllRewards, getUserRewards, purchaseReward, consumeReward } from '../../services/rewards';
 import { getUserStats } from '../../services/stats';
 import RewardCard from './RewardCard';
 
@@ -61,7 +61,7 @@ const RewardsPage = ({ onNavigate }) => {
             setIsLoading(true);
             setMessage('');
 
-            await useReward(userRewardId);
+            await consumeReward(userRewardId);
             setMessage('보상을 사용했습니다!');
 
             // 데이터 다시 가져오기
