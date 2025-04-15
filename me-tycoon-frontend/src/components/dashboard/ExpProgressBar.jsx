@@ -1,4 +1,6 @@
+// src/components/dashboard/ExpProgressBar.jsx
 import React from 'react';
+import styles from './ExpProgressBar.module.css';
 
 const ExpProgressBar = ({ expProgress, stats }) => {
   if (!stats) return null;
@@ -10,14 +12,14 @@ const ExpProgressBar = ({ expProgress, stats }) => {
   const currentLevelExp = stats.experience - prevLevelExp;
   
   return (
-    <div className="mb-4">
-      <div className="flex justify-between mb-1">
-        <span className="text-sm">EXP: {stats.experience}</span>
-        <span className="text-sm">{Math.round(currentLevelExp)}/{expNeeded}</span>
+    <div className={styles.container}>
+      <div className={styles.stats}>
+        <span className={styles.statText}>EXP: {stats.experience}</span>
+        <span className={styles.statText}>{Math.round(currentLevelExp)}/{expNeeded}</span>
       </div>
-      <div className="w-full bg-gray-700 rounded-full h-4">
+      <div className={styles.progressContainer}>
         <div 
-          className="bg-blue-500 h-4 rounded-full" 
+          className={styles.progressBar} 
           style={{ width: `${expProgress}%` }}
         ></div>
       </div>

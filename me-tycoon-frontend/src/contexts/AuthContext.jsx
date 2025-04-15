@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
-import { getUserInfo } from '../services/auth';
+import { getUserInfo, login as loginService } from '../services/auth';
 import { getAuthToken, clearAuthToken } from '../services/api';
 
 const AuthContext = createContext(null);
@@ -20,6 +20,7 @@ export const AuthProvider = ({ children }) => {
                     setUser(userData);
                     setIsAuthenticated(true);
                 } catch (error) {
+                    console.error('Error checking auth status:', error);
                     clearAuthToken();
                 }
             }
@@ -29,17 +30,37 @@ export const AuthProvider = ({ children }) => {
         checkAuthStatus();
     }, []);
 
+    // 로그인 함수
+    const login = async (username, password) => {
+        try {
+            const result = await loginService(username, password);
+
+            if (result.success) {
+                const userData = await getUserInfo();
+                setUser(userData);
+                setIsAuthenticated(true);
+                return true;
+            }
+
+            return false;
+        } catch (error) {
+            console.error('Login error:', error);
+            return false;
+        }
+    };
+
     const value = {
         user,
         setUser,
         isAuthenticated,
         setIsAuthenticated,
-        isLoading
+        isLoading,
+        login
     };
 
     return (
         <AuthContext.Provider value={value}>
             {!isLoading && children}
         </AuthContext.Provider>
-    )
-}
+    );
+};

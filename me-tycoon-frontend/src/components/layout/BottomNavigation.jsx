@@ -1,45 +1,53 @@
+// src/components/layout/BottomNavigation.jsx
 import React from 'react';
 import { User, ClipboardList, ShoppingBag, Award, Crown, BarChart2 } from 'lucide-react';
+import styles from './BottomNavigation.module.css';
 
 const BottomNavigation = ({ currentView, onNavigate }) => {
   return (
-    <nav className="bg-gray-800 p-3 shadow-lg">
-      <div className="container mx-auto flex justify-around">
+    <nav className={styles.nav}>
+      <div className={styles.container}>
         <button
           onClick={() => onNavigate('dashboard')}
-          className={`p-2 rounded-full ${currentView === 'dashboard' ? 'bg-blue-700' : ''}`}
+          className={`${styles.navButton} ${currentView === 'dashboard' ? styles.active : ''}`}
         >
           <User size={24} />
+          <span>홈</span>
         </button>
         <button
           onClick={() => onNavigate('quests')}
-          className={`p-2 rounded-full ${currentView === 'quests' ? 'bg-blue-700' : ''}`}
+          className={`${styles.navButton} ${currentView === 'quests' ? styles.active : ''}`}
         >
           <ClipboardList size={24} />
+          <span>퀘스트</span>
         </button>
         <button
           onClick={() => onNavigate('rewards')}
-          className={`p-2 rounded-full ${currentView === 'rewards' ? 'bg-blue-700' : ''}`}
+          className={`${styles.navButton} ${currentView === 'rewards' ? styles.active : ''}`}
         >
           <ShoppingBag size={24} />
+          <span>보상</span>
         </button>
         <button
           onClick={() => onNavigate('achievements')}
-          className={`p-2 rounded-full ${currentView === 'achievements' ? 'bg-blue-700' : ''}`}
+          className={`${styles.navButton} ${currentView === 'achievements' ? styles.active : ''}`}
         >
           <Award size={24} />
+          <span>업적</span>
         </button>
         <button
           onClick={() => onNavigate('titles')}
-          className={`p-2 rounded-full ${currentView === 'titles' ? 'bg-blue-700' : ''}`}
+          className={`${styles.navButton} ${currentView === 'titles' ? styles.active : ''}`}
         >
           <Crown size={24} />
+          <span>칭호</span>
         </button>
         <button
           onClick={() => onNavigate('stats')}
-          className={`p-2 rounded-full ${currentView === 'stats' ? 'bg-blue-700' : ''}`}
+          className={`${styles.navButton} ${currentView === 'stats' ? styles.active : ''}`}
         >
           <BarChart2 size={24} />
+          <span>통계</span>
         </button>
       </div>
     </nav>

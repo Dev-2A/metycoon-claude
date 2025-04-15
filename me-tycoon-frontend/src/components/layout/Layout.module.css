@@ -1,0 +1,25 @@
+/* src/components/layout/Layout.module.css */
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: linear-gradient(135deg, #121212, #1a237e);
+  }
+  
+  .main {
+    flex: 1;
+    padding: 1rem;
+    margin-bottom: 70px; /* 하단 내비게이션 높이 + 여백 */
+    max-width: 100%;
+    overflow-x: hidden;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

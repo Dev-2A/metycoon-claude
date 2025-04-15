@@ -1,36 +1,35 @@
 import React from 'react';
 import { Crown } from 'lucide-react';
 import { formatDate } from '../../utils/helpers';
+import styles from './TitleCard.module.css';
 
 const TitleCard = ({ title, onEquip, onUnequip }) => {
     return (
-        <div className={`p-4 rounded-lg ${
-            title.equipped ? 'bg-yellow-900/40' : 'bg-gray-700'
-        }`}>
-            <div className="flex justify-between">
-                <div>
-                    <div className="flex items-center">
-                        <h3 className="font-medium">{title.title.name}</h3>
+        <div className={`${styles.card} ${title.equipped ? styles.equipped : ''}`}>
+            <div className={styles.content}>
+                <div className={styles.info}>
+                    <div className={styles.titleHeader}>
+                        <h3 className={styles.titleName}>{title.title.name}</h3>
                         {title.equipped && (
-                            <Crown size={16} className="ml-2 text-yellow-400" />
+                            <Crown size={16} className={styles.crownIcon} />
                         )}
                     </div>
-                    <p className="text-sm text-gray-400 mt-1">{title.title.description}</p>
-                    <div className="text-sm text-gray-400 mt-2">
+                    <p className={styles.description}>{title.title.description}</p>
+                    <div className={styles.date}>
                         획득일: {formatDate(title.unlocked_at)}
                     </div>
                 </div>
                 {title.equipped ? (
                     <button
                         onClick={onUnequip}
-                        className="px-3 py-1 bg-gray-600 hover:bg-gray-500 rounded text-sm font-medium self-start"
+                        className={styles.unequipButton}
                     >
                         해제
                     </button>
                 ) : (
                     <button
                         onClick={onEquip}
-                        className="px-3 py-1 bg-yellow-600 hover:bg-yellow-700 rounded text-sm font-medium self-start"
+                        className={styles.equipButton}
                     >
                         착용
                     </button>

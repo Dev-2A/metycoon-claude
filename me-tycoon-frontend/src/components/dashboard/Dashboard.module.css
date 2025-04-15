@@ -1,0 +1,209 @@
+/* src/components/dashboard/Dashboard.module.css */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 0.3s ease-in;
+  }
+  
+  .profileCard {
+    background: linear-gradient(to right, rgba(30, 30, 30, 0.9), rgba(41, 41, 77, 0.9));
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(63, 81, 181, 0.2);
+  }
+  
+  .profileHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .profileInfo {
+    flex: 1;
+  }
+  
+  .username {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  
+  .title {
+    color: #ffd700;
+    font-size: 0.875rem;
+  }
+  
+  .levelBadge {
+    background: linear-gradient(135deg, #3f51b5, #002984);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(63, 81, 181, 0.4);
+  }
+  
+  .statsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sectionGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (min-width: 640px) {
+    .sectionGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .sectionCard {
+    background-color: rgba(30, 30, 30, 0.8);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(63, 81, 181, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .sectionCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .viewMoreButton {
+    color: #3f51b5;
+    font-size: 0.875rem;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  .questList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .questItem {
+    background-color: rgba(44, 44, 44, 0.8);
+    border-radius: 8px;
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+  }
+  
+  .questItem:hover {
+    background-color: rgba(63, 81, 181, 0.2);
+  }
+  
+  .questCompleted {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+  
+  .questInfo {
+    flex: 1;
+  }
+  
+  .questTitle {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+  
+  .questRewards {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+  }
+  
+  .expReward {
+    color: #757de8;
+    margin-right: 0.75rem;
+  }
+  
+  .coinReward {
+    color: #ffd700;
+  }
+  
+  .completedLabel {
+    font-size: 0.75rem;
+    color: #4caf50;
+  }
+  
+  .navigationGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .navButton {
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.9), rgba(41, 41, 77, 0.9));
+    color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    border: 1px solid rgba(63, 81, 181, 0.2);
+  }
+  
+  .navButton:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .navButton svg {
+    margin-bottom: 0.5rem;
+    color: #3f51b5;
+  }
+  
+  .navLabel {
+    font-size: 0.875rem;
+  }
+  
+  .achievements {
+    background: linear-gradient(135deg, #673ab7, #3f51b5);
+  }
+  
+  .achievements svg {
+    color: white;
+  }
+  
+  .titles {
+    background: linear-gradient(135deg, #9c27b0, #673ab7);
+  }
+  
+  .titles svg {
+    color: white;
+  }
+  
+  .rewards {
+    background: linear-gradient(135deg, #2196f3, #3f51b5);
+  }
+  
+  .rewards svg {
+    color: white;
+  }

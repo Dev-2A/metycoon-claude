@@ -1,0 +1,96 @@
+.card {
+    background-color: rgba(44, 44, 44, 0.8);
+    border-radius: 8px;
+    padding: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(63, 81, 181, 0.2);
+  }
+  
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .info {
+    flex: 1;
+  }
+  
+  .title {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+  
+  .description {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.5rem;
+  }
+  
+  .cost {
+    color: #ffd700;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .purchaseDate {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 0.5rem;
+  }
+  
+  .buyButton {
+    padding: 0.5rem 0.75rem;
+    background-color: #ffd700;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    align-self: flex-start;
+    box-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+  }
+  
+  .buyButton:hover {
+    background-color: #ffb700;
+    box-shadow: 0 4px 6px rgba(255, 215, 0, 0.4);
+  }
+  
+  .disabledBuyButton {
+    padding: 0.5rem 0.75rem;
+    background-color: rgba(255, 215, 0, 0.3);
+    color: rgba(51, 51, 51, 0.7);
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: not-allowed;
+    align-self: flex-start;
+    opacity: 0.7;
+  }
+  
+  .useButton {
+    padding: 0.5rem 0.75rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    align-self: flex-start;
+    box-shadow: 0 2px 4px rgba(76, 175, 80, 0.3);
+  }
+  
+  .useButton:hover {
+    background-color: #3d8b40;
+    box-shadow: 0 4px 6px rgba(76, 175, 80, 0.4);
+  }

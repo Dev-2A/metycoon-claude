@@ -15,6 +15,12 @@ export const fetchWithAuth = async (url, options = {}) => {
         ...(options.headers || {})
     };
 
+    console.log(`API 욫청: ${API_BASE_URL}${url}`, {
+        headers,
+        method: options.method || 'GET',
+        body: options.body
+    });
+
     try {
         const response = await fetch(`${API_BASE_URL}${url}`, {
             ...options,
@@ -22,11 +28,12 @@ export const fetchWithAuth = async (url, options = {}) => {
         });
 
         if (response.status === 401) {
+            console.error('인증 오류 발생 (401)')
             clearAuthToken();
-            window.location.href = '/login';
             throw new Error('인증이 필요합니다.');
         }
 
+        console.log(`API 응답: ${response.status}`, response.ok);
         return response;
     } catch (error) {
         console.error(`API 호출 오류: ${url}`, error);

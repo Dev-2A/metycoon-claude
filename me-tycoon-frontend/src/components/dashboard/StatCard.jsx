@@ -1,10 +1,12 @@
+// src/components/dashboard/StatCard.jsx
 import React from 'react';
+import styles from './StatCard.module.css';
 
 const StatCard = ({ label, value }) => {
     return (
-        <div className="bg-gray-700 p-4 rounded-lg text-center">
-            <p className="text-sm text-gray-400">{label}</p>
-            <p className="text-xl font-bold">{value}</p>
+        <div className={styles.card}>
+            <p className={styles.label}>{label}</p>
+            <p className={styles.value}>{value}</p>
         </div>
     );
 };

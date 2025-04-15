@@ -1,9 +1,18 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import styles from './StatChart.module.css';
 
 const StatChart = ({ data, xKey, yKey, barColor }) => {
+  if (!data || data.length === 0) {
+    return (
+      <div className={styles.noData}>
+        데이터가 없습니다.
+      </div>
+    );
+  }
+  
   return (
-    <div className="w-full h-72">
+    <div className={styles.chartContainer}>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}

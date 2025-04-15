@@ -10,39 +10,40 @@ import AchievementsPage from './components/achievements/AchievementsPage';
 import TitlesPage from './components/titles/TitlesPage';
 import StatsPage from './components/stats/StatsPage';
 import ProfilePage from './components/profile/ProfilePage';
+import styles from './App.module.css';
 
 const AppContent = () => {
     const { isAuthenticated, user, setUser, setIsAuthenticated, isLoading } = useAuth();
     const [currentView, setCurrentView] = useState('dashboard');
+    const [authView, setAuthView] = useState('login');
 
     const handleLogout = () => {
         setIsAuthenticated(false);
         setUser(null);
-        setCurrentView('login');
+        setAuthView('login');
     };
 
     // 로그인 상태에 따라 뷰 설정
     useEffect(() => {
         if (isAuthenticated) {
             setCurrentView('dashboard');
-        } else {
-            setCurrentView('login');
         }
     }, [isAuthenticated]);
 
     if (isLoading) {
         return (
-            <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-900 to-purple-900 text-white">
-                <div className="text-xl">로딩 중...</div>
+            <div className={styles.loadingContainer}>
+                <div className={styles.loadingSpinner}></div>
+                <div>로딩 중...</div>
             </div>
         );
     }
 
     if (!isAuthenticated) {
-        return currentView === 'login' ? (
-            <LoginPage onSwitchToRegister={() => setCurrentView('register')} />
+        return authView === 'login' ? (
+            <LoginPage onSwitchToRegister={() => setAuthView('register')} />
         ) : (
-            <RegisterPage onSwitchToRegister={() => setCurrentView('login')} />
+            <RegisterPage onSwitchToLogin={() => setAuthView('login')} />
         );
     }
 
@@ -69,9 +70,11 @@ const AppContent = () => {
     };
 
     return (
-        <Layout currentView={currentView} onNavigate={setCurrentView}>
-            {renderContent()}
-        </Layout>
+        <div className={styles.app}>
+            <Layout currentView={currentView} onNavigate={setCurrentView}>
+                {renderContent()}
+            </Layout>
+        </div>
     );
 };
 

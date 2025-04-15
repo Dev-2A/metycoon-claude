@@ -1,0 +1,89 @@
+.card {
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: rgba(44, 44, 44, 0.8);
+    border: 1px solid rgba(63, 81, 181, 0.2);
+  }
+  
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .equipped {
+    background-color: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .info {
+    flex: 1;
+  }
+  
+  .titleHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.25rem;
+  }
+  
+  .titleName {
+    font-weight: 500;
+  }
+  
+  .crownIcon {
+    color: #ffd700;
+    margin-left: 0.5rem;
+  }
+  
+  .description {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.5rem;
+  }
+  
+  .date {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 0.5rem;
+  }
+  
+  .equipButton {
+    padding: 0.5rem 0.75rem;
+    background-color: #ffd700;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    align-self: flex-start;
+    box-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+  }
+  
+  .equipButton:hover {
+    background-color: #ffb700;
+    box-shadow: 0 4px 6px rgba(255, 215, 0, 0.4);
+  }
+  
+  .unequipButton {
+    padding: 0.5rem 0.75rem;
+    background-color: rgba(44, 44, 44, 0.8);
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    align-self: flex-start;
+  }
+  
+  .unequipButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }

@@ -3,6 +3,7 @@ import { X } from 'lucide-react';
 import { getAllQuests, getQuestCompletions, completeQuest } from '../../services/quests';
 import { isQuestCompleted } from '../../utils/helpers';
 import QuestCard from './QuestCard';
+import styles from './QuestsPage.module.css';
 
 const QuestsPage = ({ onNavigate }) => {
     const [quests, setQuests] = useState([]);
@@ -10,6 +11,7 @@ const QuestsPage = ({ onNavigate }) => {
     const [activeType, setActiveType] = useState('daily');
     const [isLoading, setIsLoading] = useState(false);
     const [message, setMessage] = useState('');
+    const [messageType, setMessageType] = useState('');
 
     useEffect(() => {
         fetchQuests();
@@ -41,12 +43,14 @@ const QuestsPage = ({ onNavigate }) => {
 
             const result = await completeQuest(questId);
             setMessage(result.message);
+            setMessageType('success');
             fetchQuests(); // 퀘스트 목록 새로고침
 
             setIsLoading(false);
         } catch (error) {
             console.error('Error completing quest:', error);
             setMessage(error.message || '퀘스트 완료에 실패했습니다.');
+            setMessageType('error');
             setIsLoading(false);
         }
     };
@@ -61,24 +65,22 @@ const QuestsPage = ({ onNavigate }) => {
     };
 
     return (
-        <div className="container mx-auto">
-            <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold">퀘스트</h2>
-                <button onClick={() => onNavigate('dashboard')} className="text-gray-400">
+        <div className={styles.container}>
+            <div className={styles.header}>
+                <h2 className={styles.title}>퀘스트</h2>
+                <button onClick={() => onNavigate('dashboard')} className={styles.closeButton}>
                     <X size={24} />
                 </button>
             </div>
 
-            <div className="bg-gray-800 rounded-lg shadow-xl p-4 mb-6">
-                <div className="flex overflow-x-auto mb-4 pb-2">
+            <div className={styles.contentCard}>
+                <div className={styles.tabsContainer}>
                     {['daily', 'weekly', 'monthly', 'event'].map(type => (
                         <button
                             key={type}
                             onClick={() => setActiveType(type)}
-                            className={`px-4 py-2 rounded-full text-sm font-medium mr-2 min-w-max ${
-                                activeType === type
-                                    ? 'bg-blue-600 text-white'
-                                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                            className={`${styles.tab} ${
+                                activeType === type ? styles.activeTab : ''
                             }`}
                         >
                             {questTypeLabels[type]}
@@ -87,17 +89,17 @@ const QuestsPage = ({ onNavigate }) => {
                 </div>
 
                 {message && (
-                    <div className={`p-3 mb-4 rounded-lg text-sm ${
-                    message.includes('완료') ? 'bg-green-900/60' : 'bg-red-900/60'
-                }`}>
-                    {message}
-                </div>
+                    <div className={`${styles.message} ${
+                        messageType === 'success' ? styles.success : styles.error
+                    }`}>
+                        {message}
+                    </div>
                 )}
 
                 {isLoading ? (
-                    <div className="text-center py-4">로딩 중...</div>
+                    <div className={styles.loading}>로딩 중...</div>
                 ) : (
-                    <div className="space-y-3">
+                    <div className={styles.questList}>
                         {filteredQuests.length > 0 ? (
                             filteredQuests.map(quest => (
                                 <QuestCard
@@ -108,7 +110,7 @@ const QuestsPage = ({ onNavigate }) => {
                                 />
                             ))
                         ) : (
-                            <div className="text-center py-4 text-gray-400">
+                            <div className={styles.emptyState}>
                                 {activeType} 퀘스트가 없습니다.
                             </div>
                         )}

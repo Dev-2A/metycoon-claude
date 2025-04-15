@@ -1,25 +1,27 @@
+// src/components/layout/Header.jsx
 import React from 'react';
 import { useAuth } from '../../contexts/AuthContext';
+import styles from './Header.module.css';
 
 const Header = ({ stats }) => {
     const { user } = useAuth();
 
     return (
-        <header className="bg-gray-800 p-4 shadow-md">
-            <div className="container mx-auto flex justify-between items-center">
-                <h1 className="text-2xl font-bold text-blue-400">Me Tycoon</h1>
-                <div className="flex items-center space-x-4">
+        <header className={styles.header}>
+            <div className={styles.headerContent}>
+                <h1 className={styles.headerTitle}>Me Tycoon</h1>
+                <div className={styles.headerActions}>
                     {stats && (
-                        <>
-                            <div className="flex items-center">
-                                <span className="text-yellow-400 font-bold">Lv.{stats.level}</span>
+                        <div className={styles.stats}>
+                            <div className={styles.levelBadge}>
+                                Lv.{stats.level}
                             </div>
-                            <div className="flex items-center">
-                                <span className="text-yellow-400 font-bold">{stats.coin} 코인</span>
+                            <div className={styles.coinBadge}>
+                                {stats.coin} 코인
                             </div>
-                        </>
+                        </div>
                     )}
-                    <div className="text-sm text-gray-300">
+                    <div className={styles.userInfo}>
                         {user?.username}
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 from rest_framework import generics, status
+from rest_framework.permissions import AllowAny
 from quests.serializers.auth_serializers import RegisterSerializer, ChangePasswordSerializer
 from django.contrib.auth import get_user_model
 
@@ -11,6 +12,7 @@ User = get_user_model()
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
+    permission_classes = [AllowAny]
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])

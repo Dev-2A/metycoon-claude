@@ -1,0 +1,115 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 0.3s ease-in;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+  }
+  
+  .closeButton {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+  }
+  
+  .closeButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .contentCard {
+    background-color: rgba(30, 30, 30, 0.9);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(63, 81, 181, 0.2);
+  }
+  
+  .tabsContainer {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .tabsContainer::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .tab {
+    padding: 0.5rem 1rem;
+    background-color: rgba(44, 44, 44, 0.8);
+    border-radius: 9999px;
+    margin-right: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid transparent;
+  }
+  
+  .tab:hover {
+    background-color: rgba(63, 81, 181, 0.2);
+  }
+  
+  .activeTab {
+    background-color: #3f51b5;
+    color: white;
+    box-shadow: 0 2px 4px rgba(63, 81, 181, 0.3);
+  }
+  
+  .message {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+  }
+  
+  .success {
+    background-color: rgba(76, 175, 80, 0.2);
+    border: 1px solid rgba(76, 175, 80, 0.5);
+    color: #4caf50;
+  }
+  
+  .error {
+    background-color: rgba(211, 47, 47, 0.2);
+    border: 1px solid rgba(211, 47, 47, 0.5);
+    color: #f44336;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .questList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .emptyState {
+    text-align: center;
+    padding: 2rem;
+    color: rgba(255, 255, 255, 0.6);
+  }

@@ -1,0 +1,136 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 0.3s ease-in;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+  }
+  
+  .closeButton {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+  }
+  
+  .closeButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .statsCard {
+    background-color: rgba(30, 30, 30, 0.9);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(63, 81, 181, 0.2);
+    transition: transform 0.2s;
+  }
+  
+  .statsCard:hover {
+    transform: translateY(-5px);
+  }
+  
+  .cardTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #757de8;
+  }
+  
+  .statsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .statItem {
+    background-color: rgba(44, 44, 44, 0.8);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .statLabel {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.5rem;
+  }
+  
+  .statValue {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .chartContainer {
+    height: 18rem;
+    width: 100%;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 2rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .questList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .questItem {
+    background-color: rgba(44, 44, 44, 0.8);
+    border-radius: 8px;
+    padding: 0.75rem;
+  }
+  
+  .questHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .questTitle {
+    font-weight: 500;
+  }
+  
+  .questCount {
+    background-color: rgba(63, 81, 181, 0.2);
+    color: #757de8;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+  }
+
+  .emptyChart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+    background-color: rgba(44, 44, 44, 0.3);
+    border-radius: 8px;
+    padding: 2rem;
+  }
