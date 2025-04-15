@@ -1,0 +1,60 @@
+/* 화면 사이즈가 작아지면 적용되는 스타일 */
+
+@media (max-width: 768px) {
+    .container {
+      padding: 0 0.75rem;
+    }
+    
+    .statsGrid {
+      grid-template-columns: 1fr !important;
+    }
+    
+    .title {
+      font-size: 1.5rem !important;
+    }
+    
+    .card {
+      padding: 1.25rem !important;
+    }
+    
+    .headerActions {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    
+    .stats {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .profileHeader {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .levelBadge {
+      margin-top: 0.75rem;
+    }
+    
+    .contentCard {
+      padding: 1rem !important;
+    }
+    
+    .tabButtons {
+      flex-wrap: wrap;
+    }
+    
+    .tabButton {
+      font-size: 0.75rem;
+      padding: 0.4rem 0.75rem;
+    }
+    
+    .questTypeTag {
+      display: none;
+    }
+    
+    .navButton span {
+      font-size: 0.7rem;
+    }
+  }

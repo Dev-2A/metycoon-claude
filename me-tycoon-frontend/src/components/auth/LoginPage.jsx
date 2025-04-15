@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import styles from './LoginPage.module.css';
+import buttonStyles from '../../styles/Button.module.css';
 
 const LoginPage = ({ onSwitchToRegister }) => {
   const [username, setUsername] = useState('');
@@ -61,7 +62,7 @@ const LoginPage = ({ onSwitchToRegister }) => {
           <button
             type="submit"
             disabled={isLoading}
-            className={styles.button}
+            className={`${buttonStyles.button} ${buttonStyles.primary} ${isLoading ? buttonStyles.disabled : ''} ${buttonStyles.full}`}
           >
             {isLoading ? '로그인 중...' : '로그인'}
           </button>
@@ -69,7 +70,7 @@ const LoginPage = ({ onSwitchToRegister }) => {
         <div className={styles.switchLink}>
           <button
             onClick={onSwitchToRegister}
-            className={styles.switchButton}
+            className={buttonStyles.link}
           >
             계정이 없으신가요? 회원가입하기
           </button>

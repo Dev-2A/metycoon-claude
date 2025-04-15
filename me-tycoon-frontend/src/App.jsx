@@ -11,6 +11,7 @@ import TitlesPage from './components/titles/TitlesPage';
 import StatsPage from './components/stats/StatsPage';
 import ProfilePage from './components/profile/ProfilePage';
 import styles from './App.module.css';
+import responsiveStyles from './styles/responsive.module.css';
 
 const AppContent = () => {
     const { isAuthenticated, user, setUser, setIsAuthenticated, isLoading } = useAuth();
@@ -32,7 +33,7 @@ const AppContent = () => {
 
     if (isLoading) {
         return (
-            <div className={styles.loadingContainer}>
+            <div className={`${styles.loadingContainer} ${responsiveStyles.container}`}>
                 <div className={styles.loadingSpinner}></div>
                 <div>로딩 중...</div>
             </div>
@@ -70,7 +71,7 @@ const AppContent = () => {
     };
 
     return (
-        <div className={styles.app}>
+        <div className={`${styles.app} ${responsiveStyles.app}`}>
             <Layout currentView={currentView} onNavigate={setCurrentView}>
                 {renderContent()}
             </Layout>

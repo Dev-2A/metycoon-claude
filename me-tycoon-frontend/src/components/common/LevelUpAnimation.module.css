@@ -1,0 +1,112 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.5s;
+  }
+  
+  .content {
+    text-align: center;
+    animation: scaleUp 0.5s;
+  }
+  
+  .levelUp {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ffd700;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7), 0 0 20px rgba(255, 215, 0, 0.5);
+    animation: pulse 0.5s infinite alternate;
+  }
+  
+  .level {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #3f51b5, #757de8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    animation: bounceIn 0.8s;
+  }
+  
+  .message {
+    font-size: 1.25rem;
+    color: white;
+    animation: fadeIn 0.8s 0.5s both;
+  }
+  
+  .stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: radial-gradient(2px 2px at 20px 30px, #fff, rgba(0, 0, 0, 0)), 
+                      radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)), 
+                      radial-gradient(2px 2px at 60px 110px, #fff, rgba(0, 0, 0, 0)), 
+                      radial-gradient(2px 2px at 80px 10px, #fff, rgba(0, 0, 0, 0));
+    background-repeat: repeat;
+    background-size: 100px 100px;
+    animation: stars 3s linear infinite;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes scaleUp {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  @keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+  }
+  
+  @keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.1); }
+    80% { transform: scale(0.9); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  @keyframes stars {
+    from { background-position: 0 0; }
+    to { background-position: 100px 100px; }
+  }
+  
+  @media (max-width: 768px) {
+    .levelUp {
+      font-size: 2.5rem;
+    }
+    
+    .level {
+      font-size: 3rem;
+    }
+    
+    .message {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .levelUp {
+      font-size: 2rem;
+    }
+    
+    .level {
+      font-size: 2.5rem;
+    }
+    
+    .message {
+      font-size: 0.875rem;
+    }
+  }

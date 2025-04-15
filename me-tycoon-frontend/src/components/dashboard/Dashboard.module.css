@@ -207,3 +207,123 @@
   .rewards svg {
     color: white;
   }
+
+  .questItem {
+    background-color: rgba(44, 44, 44, 0.8);
+    border-radius: 8px;
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .questItem:hover {
+    background-color: rgba(63, 81, 181, 0.2);
+    transform: translateX(5px);
+  }
+  
+  .questItem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, #3f51b5, #002984);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .questItem:hover::before {
+    opacity: 1;
+  }
+  
+  .questCompleted {
+    background-color: rgba(76, 175, 80, 0.2);
+    border-left: 3px solid #4caf50;
+  }
+  
+  .questCompleted::before {
+    display: none;
+  }
+  
+  .questInfo {
+    flex: 1;
+  }
+  
+  .questTitle {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .questTypeTag {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    background-color: rgba(63, 81, 181, 0.2);
+    color: #757de8;
+  }
+  
+  .daily {
+    background-color: rgba(63, 81, 181, 0.2);
+    color: #757de8;
+  }
+  
+  .weekly {
+    background-color: rgba(156, 39, 176, 0.2);
+    color: #ce93d8;
+  }
+  
+  .monthly {
+    background-color: rgba(233, 30, 99, 0.2);
+    color: #f48fb1;
+  }
+  
+  .event {
+    background-color: rgba(255, 152, 0, 0.2);
+    color: #ffb74d;
+  }
+  
+  .questRewards {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+  }
+  
+  .expReward {
+    color: #757de8;
+    margin-right: 0.75rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .coinReward {
+    color: #ffd700;
+    display: flex;
+    align-items: center;
+  }
+  
+  .rewardIcon {
+    margin-right: 3px;
+    font-size: 0.7rem;
+  }
+  
+  .completedLabel {
+    font-size: 0.75rem;
+    padding: 3px 6px;
+    border-radius: 4px;
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #4caf50;
+    display: flex;
+    align-items: center;
+  }
+  
+  .completedIcon {
+    margin-right: 3px;
+  }

@@ -3,6 +3,8 @@ import { X } from 'lucide-react';
 import { getUserTitles, equipTitle, unequipTitle } from '../../services/titles';
 import TitleCard from './TitleCard';
 import styles from './TitlesPage.module.css';
+import cardStyles from '../../styles/Card.module.css';
+import responsiveStyles from '../../styles/responsive.module.css';
 
 const TitlesPage = ({ onNavigate }) => {
     const [titles, setTitles] = useState([]);
@@ -65,15 +67,15 @@ const TitlesPage = ({ onNavigate }) => {
     };
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${responsiveStyles.container}`}>
             <div className={styles.header}>
-                <h2 className={styles.title}>칭호</h2>
+                <h2 className={`${styles.title} ${responsiveStyles.title}`}>칭호</h2>
                 <button onClick={() => onNavigate('dashboard')} className={styles.closeButton}>
                     <X size={24} />
                 </button>
             </div>
 
-            <div className={styles.contentCard}>
+            <div className={`${cardStyles.card} ${styles.contentCard} ${responsiveStyles.contentCard}`}>
                 {message && (
                     <div className={`${styles.message} ${
                         messageType === 'success' ? styles.success : styles.error

@@ -8,6 +8,9 @@ import { calculateExpProgress } from '../../utils/helpers';
 import ExpProgressBar from './ExpProgressBar';
 import StatCard from './StatCard';
 import styles from './Dashboard.module.css';
+import cardStyles from '../../styles/Card.module.css';
+import responsiveStyles from '../../styles/responsive.module.css';
+import buttonStyles from '../../styles/Button.module.css';
 
 const Dashboard = ({ onNavigate }) => {
     const [questStats, setQuestStats] = useState(null);
@@ -54,9 +57,9 @@ const Dashboard = ({ onNavigate }) => {
     const expProgress = stats ? calculateExpProgress(stats) : 0;
 
     return (
-        <div className={styles.container}>
-            <div className={styles.profileCard}>
-                <div className={styles.profileHeader}>
+        <div className={`${styles.container} ${responsiveStyles.container}`}>
+            <div className={`${cardStyles.card} ${styles.profileCard}`}>
+                <div className={`${styles.profileHeader} ${responsiveStyles.profileHeader}`}>
                     <div className={styles.profileInfo}>
                         <h2 className={styles.username}>{stats?.user}</h2>
                         {userTitles?.length > 0 && (
@@ -77,16 +80,8 @@ const Dashboard = ({ onNavigate }) => {
             </div>
 
             <div className={styles.sectionGrid}>
-                <div className={styles.sectionCard}>
-                    <div className={styles.sectionHeader}>
-                        <h3 className={styles.sectionTitle}>오늘의 퀘스트</h3>
-                        <button
-                            onClick={() => onNavigate('quests')}
-                            className={styles.viewMoreButton}
-                        >
-                            더 보기
-                        </button>
-                    </div>
+                <div className={`${cardStyles.card} ${styles.sectionCard}`}>
+                    <h3 className={cardStyles.cardTitle}>오늘의 퀘스트</h3>
                     <div className={styles.questList}>
                         {dailyQuests.slice(0, 3).map(quest => {
                             const isCompleted = todayCompletions.some(c => c.quest === quest.id);
@@ -111,16 +106,8 @@ const Dashboard = ({ onNavigate }) => {
                     </div>
                 </div>
 
-                <div className={styles.sectionCard}>
-                    <div className={styles.sectionHeader}>
-                        <h3 className={styles.sectionTitle}>주간 퀘스트</h3>
-                        <button
-                            onClick={() => onNavigate('quests')}
-                            className={styles.viewMoreButton}
-                        >
-                            더 보기
-                        </button>
-                    </div>
+                <div className={`${cardStyles.card} ${styles.sectionCard}`}>
+                    <h3 className={cardStyles.cardTitle}>주간 퀘스트</h3>
                     <div className={styles.questList}>
                         {weeklyQuests.slice(0, 3).map(quest => (
                             <div key={quest.id} className={styles.questItem}>
@@ -140,21 +127,21 @@ const Dashboard = ({ onNavigate }) => {
             <div className={styles.navigationGrid}>
                 <button
                     onClick={() => onNavigate('achievements')}
-                    className={`${styles.navButton} ${styles.achievements}`}
+                    className={`${buttonStyles.button} ${buttonStyles.secondary} ${styles.navButton} ${styles.achievements}`}
                 >
                     <Award size={24} />
                     <p className={styles.navLabel}>업적</p>
                 </button>
                 <button
                     onClick={() => onNavigate('titles')}
-                    className={`${styles.navButton} ${styles.titles}`}
+                    className={`${buttonStyles.button} ${buttonStyles.secondary} ${styles.navButton} ${styles.titles}`}
                 >
                     <Crown size={24} />
                     <p className={styles.navLabel}>칭호</p>
                 </button>
                 <button
                     onClick={() => onNavigate('rewards')}
-                    className={`${styles.navButton} ${styles.rewards}`}
+                    className={`${buttonStyles.button} ${buttonStyles.secondary} ${styles.navButton} ${styles.rewards}`}
                 >
                     <ShoppingBag size={24} />
                     <p className={styles.navLabel}>보상</p>

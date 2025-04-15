@@ -4,6 +4,8 @@ import { getAllRewards, getUserRewards, purchaseReward, consumeReward } from '..
 import { getUserStats } from '../../services/stats';
 import RewardCard from './RewardCard';
 import styles from './RewardsPage.module.css';
+import cardStyles from '../../styles/Card.module.css';
+import responsiveStyles from '../../styles/responsive.module.css';
 
 const RewardsPage = ({ onNavigate }) => {
     const [availableRewards, setAvailableRewards] = useState([]);
@@ -84,16 +86,16 @@ const RewardsPage = ({ onNavigate }) => {
     };
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${responsiveStyles.container}`}>
             <div className={styles.header}>
-                <h2 className={styles.title}>보상</h2>
+                <h2 className={`${styles.title} ${responsiveStyles.title}`}>보상</h2>
                 <button onClick={() => onNavigate('dashboard')} className={styles.closeButton}>
                     <X size={24} />
                 </button>
             </div>
 
-            <div className={styles.contentCard}>
-                <div className={styles.topBar}>
+            <div className={`${cardStyles.card} ${styles.contentCard} ${responsiveStyles.contentCard}`}>
+                <div className={`${styles.topBar} ${responsiveStyles.tabButtons}`}>
                     <div className={styles.tabButtons}>
                         <button
                             onClick={() => setActiveTab('available')}

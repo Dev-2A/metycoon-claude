@@ -3,6 +3,8 @@ import { X } from 'lucide-react';
 import { getUserAchievements } from '../../services/achievements';
 import AchievementCard from './AchievementCard';
 import styles from './AchievementsPage.module.css';
+import cardStyles from '../../styles/Card.module.css';
+import responsiveStyles from '../../styles/responsive.module.css';
 
 const AchievementsPage = ({ onNavigate }) => {
     const [achievements, setAchievements] = useState([]);
@@ -45,9 +47,9 @@ const AchievementsPage = ({ onNavigate }) => {
     }, {});
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${responsiveStyles.container}`}>
             <div className={styles.header}>
-                <h2 className={styles.title}>업적</h2>
+                <h2 className={`${styles.title} ${responsiveStyles.title}`}>업적</h2>
                 <button onClick={() => onNavigate('dashboard')} className={styles.closeButton}>
                     <X size={24} />
                 </button>
@@ -65,7 +67,7 @@ const AchievementsPage = ({ onNavigate }) => {
                         return (
                             <div key={type} className={styles.section}>
                                 <h3 className={styles.sectionTitle}>{achievementsByType[type]} 업적</h3>
-                                <div className={styles.achievementCard}>
+                                <div className={`${cardStyles.card} ${styles.achievementCard}`}>
                                     <div className={styles.achievementList}>
                                         {typeAchievements.map(achievement => (
                                             <AchievementCard
@@ -81,7 +83,7 @@ const AchievementsPage = ({ onNavigate }) => {
                     })}
 
                     {achievements.length === 0 && (
-                        <div className={styles.emptyState}>
+                        <div className={`${cardStyles.card} ${styles.emptyState}`}>
                             <p className={styles.emptyTitle}>아직 달성한 업적이 없습니다.</p>
                             <p className={styles.emptyDescription}>퀘스트를 완료하고 레벨을 올려 업적을 달성해보세요!</p>
                         </div>

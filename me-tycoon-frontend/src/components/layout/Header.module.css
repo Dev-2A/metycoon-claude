@@ -1,71 +1,96 @@
-/* src/components/layout/Header.module.css */
 .header {
-    background-color: rgba(30, 30, 30, 0.8);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    padding: 1rem;
-    border-bottom: 2px solid #3f51b5;
-  }
-  
-  .headerContent {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-  
-  .headerTitle {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #3f51b5;
-    margin: 0;
-    text-shadow: 0 0 10px rgba(63, 81, 181, 0.5);
-    letter-spacing: 1px;
-  }
-  
-  .headerActions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .userInfo {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
-  }
-  
-  .stats {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .levelBadge {
-    background: linear-gradient(135deg, #3f51b5, #002984);
-    color: white;
-    padding: 0.3rem 0.6rem;
-    border-radius: 9999px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .coinBadge {
-    background: linear-gradient(135deg, #ffd700, #ff9800);
-    color: #333;
-    padding: 0.3rem 0.6rem;
-    border-radius: 9999px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
+  background-color: rgba(20, 20, 30, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 10px rgba(63, 81, 181, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 1rem;
+  border-bottom: 2px solid #3f51b5;
+  animation: slideDown 0.5s ease-out;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.headerTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #3f51b5;
+  margin: 0;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(63, 81, 181, 0.5);
+  position: relative;
+}
+
+.headerTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #3f51b5, transparent);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userInfo {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: 1rem;
+}
+
+.stats {
+  display: flex;
+  gap: 1rem;
+}
+
+.levelBadge {
+  background: linear-gradient(135deg, #3f51b5, #002984);
+  color: white;
+  padding: 0.35rem 0.7rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 10px rgba(63, 81, 181, 0.3);
+  transition: all 0.3s;
+}
+
+.levelBadge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 15px rgba(63, 81, 181, 0.5);
+}
+
+.coinBadge {
+  background: linear-gradient(135deg, #ffd700, #ff9800);
+  color: #333;
+  padding: 0.35rem 0.7rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 215, 0, 0.3);
+  transition: all 0.3s;
+}
+
+.coinBadge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 215, 0, 0.5);
+}

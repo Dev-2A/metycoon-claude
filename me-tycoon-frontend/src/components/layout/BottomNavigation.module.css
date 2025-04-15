@@ -1,46 +1,80 @@
-/* src/components/layout/BottomNavigation.module.css */
 .nav {
-    background-color: rgba(30, 30, 30, 0.9);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-    padding: 0.75rem;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    border-top: 2px solid #3f51b5;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .navButton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0.5rem;
-    background-color: transparent;
-    color: rgba(255, 255, 255, 0.6);
-    border-radius: 8px;
-    transition: all 0.2s ease;
-    font-size: 0.75rem;
-  }
-  
-  .navButton svg {
-    margin-bottom: 4px;
-  }
-  
-  .active {
-    background-color: #3f51b5;
-    color: white;
-    box-shadow: 0 2px 8px rgba(63, 81, 181, 0.5);
-  }
-  
-  .navButton:hover:not(.active) {
-    background-color: rgba(63, 81, 181, 0.2);
-  }
+  background-color: rgba(20, 20, 30, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1), 0 0 10px rgba(63, 81, 181, 0.3);
+  padding: 0.75rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  border-top: 2px solid #3f51b5;
+  animation: slideUp 0.5s ease-out;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.navButton svg {
+  margin-bottom: 4px;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.navButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #3f51b5, #002984);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.navButton span {
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.active {
+  color: white;
+}
+
+.active::before {
+  opacity: 1;
+}
+
+.active svg {
+  transform: translateY(-2px);
+}
+
+.navButton:hover:not(.active) {
+  background-color: rgba(63, 81, 181, 0.2);
+  transform: translateY(-2px);
+}
+
+.navButton:hover svg {
+  transform: scale(1.1);
+}

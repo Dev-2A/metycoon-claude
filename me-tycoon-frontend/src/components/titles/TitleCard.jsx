@@ -2,6 +2,7 @@ import React from 'react';
 import { Crown } from 'lucide-react';
 import { formatDate } from '../../utils/helpers';
 import styles from './TitleCard.module.css';
+import buttonStyles from '../../styles/Button.module.css';
 
 const TitleCard = ({ title, onEquip, onUnequip }) => {
     return (
@@ -22,14 +23,14 @@ const TitleCard = ({ title, onEquip, onUnequip }) => {
                 {title.equipped ? (
                     <button
                         onClick={onUnequip}
-                        className={styles.unequipButton}
+                        className={`${buttonStyles.button} ${buttonStyles.outline} ${buttonStyles.small}`}
                     >
                         해제
                     </button>
                 ) : (
                     <button
                         onClick={onEquip}
-                        className={styles.equipButton}
+                        className={`${buttonStyles.button} ${buttonStyles.warning} ${buttonStyles.small}`}
                     >
                         착용
                     </button>

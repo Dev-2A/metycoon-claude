@@ -4,6 +4,7 @@ import Header from './Header';
 import BottomNavigation from './BottomNavigation';
 import { getUserStats } from '../../services/stats';
 import styles from './Layout.module.css';
+import responsiveStyles from '../../styles/responsive.module.css';
 
 const Layout = ({ children, currentView, onNavigate }) => {
     const [stats, setStats] = useState(null);
@@ -22,9 +23,9 @@ const Layout = ({ children, currentView, onNavigate }) => {
     }, []);
 
     return (
-        <div className={styles.layout}>
+        <div className={`${styles.layout} ${responsiveStyles.layout}`}>
             <Header stats={stats} />
-            <main className={styles.main}>
+            <main className={`${styles.main} ${responsiveStyles.container}`}>
                 {children}
             </main>
             <BottomNavigation currentView={currentView} onNavigate={onNavigate} />

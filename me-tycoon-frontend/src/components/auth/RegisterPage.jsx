@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { register } from '../../services/auth';
 import styles from './RegisterPage.module.css';
+import buttonStyles from '../../styles/Button.module.css';
 
 const RegisterPage = ({ onSwitchToLogin }) => {
     const [username, setUsername] = useState('');
@@ -37,56 +38,56 @@ const RegisterPage = ({ onSwitchToLogin }) => {
     };
 
     return (
-        <div className={styles.container}>
-          <div className={styles.card}>
-            <h1 className={styles.title}>회원가입</h1>
-            <form onSubmit={handleSubmit}>
-              <div className={styles.formGroup}>
-                <label className={styles.label}>사용자 이름</label>
-                <input
-                  type="text"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  className={styles.input}
-                  required
-                />
-              </div>
-              <div className={styles.formGroup}>
-                <label className={styles.label}>비밀번호</label>
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className={styles.input}
-                  required
-                />
-                <p className={styles.hint}>최소 6자 이상 입력해주세요</p>
-              </div>
-              {error && (
-                <div className={styles.error}>{error}</div>
-              )}
-              {success && (
-                <div className={styles.success}>{success}</div>
-              )}
-              <button
-                type="submit"
-                disabled={isLoading}
-                className={styles.button}
-              >
-                {isLoading ? '처리 중...' : '회원가입'}
-              </button>
-            </form>
-            <div className={styles.switchLink}>
-              <button
-                onClick={onSwitchToLogin}
-                className={styles.switchButton}
-              >
-                이미 계정이 있으신가요? 로그인하기
-              </button>
+      <div className={styles.container}>
+        <div className={styles.card}>
+          <h1 className={styles.title}>회원가입</h1>
+          <form onSubmit={handleSubmit}>
+            <div className={styles.formGroup}>
+              <label className={styles.label}>사용자 이름</label>
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className={styles.input}
+                required
+              />
             </div>
+            <div className={styles.formGroup}>
+              <label className={styles.label}>비밀번호</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className={styles.input}
+                required
+              />
+              <p className={styles.hint}>최소 6자 이상 입력해주세요</p>
+            </div>
+            {error && (
+              <div className={styles.error}>{error}</div>
+            )}
+            {success && (
+              <div className={styles.success}>{success}</div>
+            )}
+            <button
+              type="submit"
+              disabled={isLoading}
+              className={`${buttonStyles.button} ${buttonStyles.primary} ${isLoading ? buttonStyles.disabled : ''} ${buttonStyles.full}`}
+            >
+              {isLoading ? '처리 중...' : '회원가입'}
+            </button>
+          </form>
+          <div className={styles.switchLink}>
+            <button
+              onClick={onSwitchToLogin}
+              className={buttonStyles.link}
+            >
+              이미 계정이 있으신가요? 로그인하기
+            </button>
           </div>
         </div>
-    );
+      </div>
+  );
 };
 
 export default RegisterPage;

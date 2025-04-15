@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { X, LogOut } from 'lucide-react';
 import { logout } from '../../services/auth';
 import styles from './ProfilePage.module.css';
+import cardStyles from '../../styles/Card.module.css';
+import buttonStyles from '../../styles/Button.module.css';
+import responsiveStyles from '../../styles/responsive.module.css';
 
 const ProfilePage = ({ user, onNavigate, onLogout }) => {
     const [confirmLogout, setConfirmLogout] = useState(false);
@@ -17,16 +20,16 @@ const ProfilePage = ({ user, onNavigate, onLogout }) => {
     };
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${responsiveStyles.container}`}>
             <div className={styles.header}>
-                <h2 className={styles.title}>프로필</h2>
+                <h2 className={`${styles.title} ${responsiveStyles.title}`}>프로필</h2>
                 <button onClick={() => onNavigate('dashboard')} className={styles.closeButton}>
                     <X size={24} />
                 </button>
             </div>
 
-            <div className={styles.profileCard}>
-                <div className={styles.profileHeader}>
+            <div className={`${cardStyles.card} ${styles.profileCard} ${responsiveStyles.card}`}>
+                <div className={`${styles.profileHeader} ${responsiveStyles.profileHeader}`}>
                     <div className={styles.avatar}>
                         <span>{user?.username?.charAt(0).toUpperCase()}</span>
                     </div>
@@ -46,14 +49,12 @@ const ProfilePage = ({ user, onNavigate, onLogout }) => {
                 </div>
             </div>
 
-            <div className={styles.logoutCard}>
+            <div className={`${cardStyles.card} ${styles.logoutCard}`}>
                 <button
                     onClick={handleLogout}
-                    className={`${styles.logoutButton} ${
-                        confirmLogout ? styles.confirmLogout : styles.normalLogout
-                    }`}
+                    className={`${buttonStyles.button} ${confirmLogout ? buttonStyles.danger : buttonStyles.outline} ${buttonStyles.full}`}
                 >
-                    <LogOut size={18} className={styles.logoutIcon} />
+                    <LogOut size={18} className={buttonStyles.icon} />
                     {confirmLogout ? '정말 로그아웃 하시겠습니까?' : '로그아웃'}
                 </button>
             </div>

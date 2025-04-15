@@ -4,6 +4,8 @@ import { getAllQuests, getQuestCompletions, completeQuest } from '../../services
 import { isQuestCompleted } from '../../utils/helpers';
 import QuestCard from './QuestCard';
 import styles from './QuestsPage.module.css';
+import cardStyles from '../../styles/Card.module.css';
+import responsiveStyles from '../../styles/responsive.module.css';
 
 const QuestsPage = ({ onNavigate }) => {
     const [quests, setQuests] = useState([]);
@@ -65,16 +67,16 @@ const QuestsPage = ({ onNavigate }) => {
     };
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${responsiveStyles.container}`}>
             <div className={styles.header}>
-                <h2 className={styles.title}>퀘스트</h2>
+                <h2 className={`${styles.title} ${responsiveStyles.title}`}>퀘스트</h2>
                 <button onClick={() => onNavigate('dashboard')} className={styles.closeButton}>
                     <X size={24} />
                 </button>
             </div>
 
-            <div className={styles.contentCard}>
-                <div className={styles.tabsContainer}>
+            <div className={`${cardStyles.card} ${styles.contentCard} ${responsiveStyles.contentCard}`}>
+                <div className={`${styles.tabsContainer} ${responsiveStyles.tabButtons}`}>
                     {['daily', 'weekly', 'monthly', 'event'].map(type => (
                         <button
                             key={type}
