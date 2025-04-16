@@ -1,5 +1,6 @@
 // 백엔드 API 연동을 위한 기본 설정
-const API_BASE_URL = 'http://localhost:8000/api';
+// const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = 'https://me-tycoon-backend.onrender.com/api'
 
 // 인증 토큰 관리
 export const getAuthToken = () => localStorage.getItem('authToken');
