@@ -168,10 +168,11 @@ SIMPLE_JWT = {
 }
 
 # CORS 설정
-CORS_ALLOW_ALL_ORIGINS = [
+CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'https://me-tycoon-frontend.onrender.com',
 ]
+CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOW_CREDENTIALS = True
 
 # 커스텀 유저 모델 설정
