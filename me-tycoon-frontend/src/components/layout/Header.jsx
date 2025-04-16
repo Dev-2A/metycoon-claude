@@ -1,6 +1,7 @@
 // src/components/layout/Header.jsx
 import React from 'react';
 import { useAuth } from '../../contexts/AuthContext';
+import { Award, Coins } from 'lucide-react';
 import styles from './Header.module.css';
 import responsiveStyles from '../../styles/responsive.module.css';
 
@@ -15,9 +16,11 @@ const Header = ({ stats }) => {
                     {stats && (
                         <div className={`${styles.stats} ${responsiveStyles.stats}`}>
                             <div className={styles.levelBadge}>
+                                <Award size={16} className={styles.levelIcon} />
                                 Lv.{stats.level}
                             </div>
                             <div className={styles.coinBadge}>
+                                <Coins size={16} className={styles.coinIcon} />
                                 {stats.coin} 코인
                             </div>
                         </div>

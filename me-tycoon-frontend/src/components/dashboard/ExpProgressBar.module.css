@@ -1,33 +1,59 @@
 .container {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  background-color: rgba(30, 30, 40, 0.6);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(63, 81, 181, 0.15);
 }
 
 .stats {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+  padding: 0 0.5rem;
 }
 
 .statText {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.exp {
+  color: #757de8;
+  font-weight: 600;
 }
 
 .progressContainer {
   width: 100%;
-  height: 0.6rem;
+  height: 0.75rem;
   background-color: rgba(44, 44, 44, 0.8);
-  border-radius: 9999px;
+  border-radius: var(--border-radius-full);
   overflow: hidden;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
   position: relative;
+}
+
+.progressContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  pointer-events: none;
 }
 
 .progressBar {
   height: 100%;
   background: linear-gradient(to right, #3f51b5, #757de8);
-  border-radius: 9999px;
-  transition: width 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: var(--border-radius-full);
+  transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   overflow: hidden;
 }
@@ -45,7 +71,7 @@
     rgba(255, 255, 255, 0.3) 50%,
     transparent 100%
   );
-  animation: shimmer 2s infinite;
+  animation: shimmer 3s infinite;
 }
 
 .levelUpAnimation {
@@ -55,4 +81,10 @@
 @keyframes shimmer {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
 }

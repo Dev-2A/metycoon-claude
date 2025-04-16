@@ -1,11 +1,12 @@
 .card {
-  padding: 1rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  padding: 1.25rem;
+  border-radius: var(--border-radius-lg);
+  transition: all var(--transition-normal);
   position: relative;
   background-color: rgba(44, 44, 44, 0.8);
   border: 1px solid rgba(63, 81, 181, 0.2);
   overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .card::before {
@@ -13,16 +14,16 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 3px;
+  width: 4px;
   height: 100%;
   background: linear-gradient(to bottom, #3f51b5, #002984);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-normal);
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px) translateX(3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 0 15px rgba(63, 81, 181, 0.2);
 }
 
 .card:hover::before {
@@ -30,7 +31,7 @@
 }
 
 .completed {
-  background-color: rgba(76, 175, 80, 0.1);
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.15), rgba(56, 142, 60, 0.05));
   border: 1px solid rgba(76, 175, 80, 0.3);
 }
 
@@ -42,114 +43,147 @@
 .content {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
 }
 
 .info {
   flex: 1;
+  margin-right: 1rem;
 }
 
 .title {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
   color: white;
   display: flex;
   align-items: center;
+  font-size: 1.1rem;
 }
 
 .typeTag {
   font-size: 0.65rem;
-  padding: 2px 6px;
-  border-radius: 4px;
-  margin-left: 8px;
-  background-color: rgba(63, 81, 181, 0.2);
-  color: #757de8;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--border-radius-full);
+  margin-left: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+}
+
+.typeTag::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 0.3rem;
+  background-color: currentColor;
 }
 
 .daily {
   background-color: rgba(63, 81, 181, 0.2);
   color: #757de8;
+  border: 1px solid rgba(63, 81, 181, 0.3);
 }
 
 .weekly {
   background-color: rgba(156, 39, 176, 0.2);
   color: #ce93d8;
+  border: 1px solid rgba(156, 39, 176, 0.3);
 }
 
 .monthly {
   background-color: rgba(233, 30, 99, 0.2);
   color: #f48fb1;
+  border: 1px solid rgba(233, 30, 99, 0.3);
 }
 
 .event {
   background-color: rgba(255, 152, 0, 0.2);
   color: #ffb74d;
+  border: 1px solid rgba(255, 152, 0, 0.3);
 }
 
 .description {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 0.75rem;
-  line-height: 1.5;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
 .rewards {
   display: flex;
   align-items: center;
-  font-size: 0.75rem;
-  margin-top: 0.75rem;
-  background-color: rgba(0, 0, 0, 0.2);
-  padding: 6px 10px;
-  border-radius: 4px;
-  display: inline-flex;
+  font-size: 0.8rem;
+  margin-top: 1rem;
 }
 
 .expReward {
   color: #757de8;
-  margin-right: 1rem;
+  margin-right: 1.25rem;
   display: flex;
   align-items: center;
+  background-color: rgba(63, 81, 181, 0.1);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--border-radius-full);
+  border: 1px solid rgba(63, 81, 181, 0.2);
+  font-weight: 600;
 }
 
 .coinReward {
   color: #ffd700;
   display: flex;
   align-items: center;
+  background-color: rgba(255, 215, 0, 0.1);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--border-radius-full);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  font-weight: 600;
 }
 
 .rewardIcon {
-  margin-right: 4px;
+  margin-right: 0.5rem;
+  font-size: 1rem;
 }
 
 .completeLabel {
-  padding: 6px 10px;
-  background-color: rgba(76, 175, 80, 0.2);
+  padding: 0.5rem 0.85rem;
+  background-color: rgba(76, 175, 80, 0.15);
   color: #4caf50;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 500;
+  border-radius: var(--border-radius-md);
+  font-size: 0.8rem;
+  font-weight: 600;
   display: flex;
   align-items: center;
   align-self: flex-start;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .checkIcon {
-  margin-right: 4px;
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
 }
 
 .completeButton {
-  padding: 0.5rem 0.75rem;
+  padding: 0.65rem 1rem;
   background: linear-gradient(135deg, #3f51b5, #002984);
   color: white;
   border: none;
-  border-radius: 6px;
-  font-size: 0.875rem;
-  font-weight: 500;
+  border-radius: var(--border-radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   align-self: flex-start;
-  box-shadow: 0 2px 4px rgba(63, 81, 181, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 0 15px rgba(63, 81, 181, 0.2);
   position: relative;
   overflow: hidden;
+  letter-spacing: 0.025em;
 }
 
 .completeButton::before {
@@ -161,15 +195,20 @@
   height: 100%;
   background: rgba(255, 255, 255, 0.1);
   transform: translateX(-100%);
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .completeButton:hover {
   background: linear-gradient(135deg, #002984, #1a237e);
-  box-shadow: 0 4px 8px rgba(63, 81, 181, 0.4);
-  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(63, 81, 181, 0.3);
+  transform: translateY(-4px);
 }
 
 .completeButton:hover::before {
-  transform: translateX(0);
+  transform: translateX(100%);
+}
+
+.completeButton:active {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 0 0 10px rgba(63, 81, 181, 0.2);
 }

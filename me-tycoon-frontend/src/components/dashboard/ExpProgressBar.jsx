@@ -14,8 +14,14 @@ const ExpProgressBar = ({ expProgress, stats }) => {
   return (
     <div className={styles.container}>
       <div className={styles.stats}>
-        <span className={styles.statText}>EXP: {stats.experience}</span>
-        <span className={styles.statText}>{Math.round(currentLevelExp)}/{expNeeded}</span>
+        <span className={styles.statText}>
+          경험치: <span className={styles.exp}>{stats.experience}EXP</span>
+        </span>
+        <span className={styles.statText}>
+          다음 레벨까지: <span className={styles.exp}>{Math.round(currentLevelExp)}/{expNeeded}EXP</span>
+          {" "}
+          ({Math.round(expProgress)}%)
+        </span>
       </div>
       <div className={styles.progressContainer}>
         <div 
