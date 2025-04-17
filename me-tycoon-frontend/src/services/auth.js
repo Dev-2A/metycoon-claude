@@ -1,6 +1,6 @@
 import { fetchWithAuth, setAuthToken, clearAuthToken } from './api';
 
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = 'https://me-tycoon-backend.onrender.com/api';
 
 export const login = async (username, password) => {
     try {
